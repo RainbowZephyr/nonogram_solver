@@ -29,6 +29,14 @@ impl<T: fmt::Debug> Matrix<T> {
         return column;
     }
 
+    pub fn get_row(&self, y:usize) -> Vec<&T> {
+        let mut row:Vec<&T> = vec![];
+        for i in 0..self.rows {
+            row.push(self.get(i,y));
+        }
+        return row;
+    }
+
     pub fn print(&self) {
         for x in 0..self.cols {
             for y in 0..self.rows {
