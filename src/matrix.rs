@@ -26,6 +26,7 @@ impl<T: fmt::Debug> Matrix<T> {
         for i in 0..self.rows {
             column.push(self.get(x,i));
         }
+        column.shrink_to_fit();
         return column;
     }
 
@@ -34,6 +35,7 @@ impl<T: fmt::Debug> Matrix<T> {
         for i in 0..self.rows {
             row.push(self.get(i,y));
         }
+        row.shrink_to_fit();
         return row;
     }
 
